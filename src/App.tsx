@@ -96,10 +96,10 @@ function App() {
           onChange={(e) => setPostContent(e.target.value)}
           type="textarea"
         />
-        <button type="submit" className="Form-submit-buttom" onClick={savePost}>
-          Add new post
-        </button>
       </form>
+      <button className="Form-submit-buttom" onClick={savePost}>
+        Add new post
+      </button>
       <footer className="Footer">
         <a
           href="https://stacktape.com"

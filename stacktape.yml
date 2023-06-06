@@ -16,6 +16,10 @@ scripts:
       connectTo:
         - mainDatabase
 
+directives:
+  - name: getDomain
+    filePath: directives.ts:getDomain
+
 hooks:
   beforeDeploy:
     - scriptName: buildFrontend
@@ -59,4 +63,5 @@ resources:
       injectEnvironment:
         - name: VITE_API_URL
           value: $ResourceParam('webService', 'url')
-      writeDotenvFilesTo: ./
+      customDomains:
+        - domainName: $getDomain($Stage())

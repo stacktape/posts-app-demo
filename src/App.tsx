@@ -3,9 +3,7 @@ import './App.css';
 import { useQueryClient, useQuery, useMutation } from '@tanstack/react-query';
 import stacktapeLogoImage from './stacktape-logo.svg';
 
-const API_URL = import.meta.env.VITE_API_URL;
-
-console.log({ API_URL });
+const API_URL = (window as any).STP_INJECTED_ENV.VITE_API_URL;
 
 function App() {
   const [postAuthor, setPostAuthor] = useState('');
@@ -98,10 +96,10 @@ function App() {
           onChange={(e) => setPostContent(e.target.value)}
           type="textarea"
         />
+        <button type="submit" className="Form-submit-buttom" onClick={savePost}>
+          Add new post
+        </button>
       </form>
-      <button className="Form-submit-buttom" onClick={savePost}>
-        Add new post
-      </button>
       <footer className="Footer">
         <a
           href="https://stacktape.com"

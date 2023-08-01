@@ -1,4 +1,4 @@
-serviceName: posts-api-demo
+serviceName: posts-app-demo
 
 scripts:
   buildFrontend:
